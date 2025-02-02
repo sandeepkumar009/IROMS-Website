@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
     return (
@@ -14,8 +15,8 @@ const Navbar = () => {
             </div>
             <nav>
                 <ul className='flex gap-3'>
-                    <li>Home</li>
-                    <li>Developers</li>
+                    <NavLink to="/"><li className='opacity-70 hover:opacity-100'>Home</li></NavLink>
+                    <NavLink to="/developers"><li className='opacity-70 hover:opacity-100'>Developers</li></NavLink>
                 </ul>
             </nav>
         </div>
