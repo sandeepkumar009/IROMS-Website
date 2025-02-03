@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -8,22 +8,20 @@ import Home from './pages/Home'
 import Developers from './pages/Developers'
 
 function App() {
-  const router = createBrowserRouter(
-    [
-      {
-        path: "/",
-        element: <><Navbar /><Home/><Footer /></>
-      },
-      {
-        path: "/developers",
-        element: <><Navbar /><Developers/><Footer /></>
-      }
-    ]
-  );
+
+  const [totalVisitors, setTotalVisitors] = useState(87676)
+  const [totalHits, setTotalHits] = useState(723672)
 
   return (
     <>
-      <RouterProvider router={router} /> 
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/developers" element={<Developers />} />
+        </Routes>
+        <Footer visitor={totalVisitors} hits={totalHits} />
+      </Router>
     </>
   )
 }

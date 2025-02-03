@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = ({visitor, hits}) => {
   return (
     <div className='bg-[#0758a1] text-white px-80 flex flex-col items-center gap-3 py-8'>
       <div className='flex gap-5 items-center'>
@@ -12,6 +12,7 @@ const Footer = () => {
       </div>
       <div>This project is jointly funded by Ministry of Jal Shakti and the World Bank under the National Hydrology Project (NHP).</div>
       <div>For assistance with account settings and system errors, please contact humid_nhp@wmail.iitm.ac.in.</div>
+      <div className='text-[#FFFF00]'>Total Hits: {hits} Total Visitors: {visitor}</div>
     </div>
   )
 }
