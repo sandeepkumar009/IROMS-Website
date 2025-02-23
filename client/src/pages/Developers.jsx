@@ -46,36 +46,30 @@ const collaborators = [
 
 const DeveloperCard = ({ name, bio, imgSrc, link }) => {
   return (
-    <div className="developer-card">
-      <img src={imgSrc} alt={name} />
-      <h2>{name}</h2>
-      <p>{bio}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer">
+    <div className="developer-card p-1 rounded-xl shadow shadow-neutral-400 flex flex-col items-center">
+      <img className='w-[300px] rounded-xl' src={imgSrc} alt={name} />
+      <h2 className='text-[25px] mt-[10px]'>{name}</h2>
+      <p className='text-[#666] text-[16px] mt-2'>{bio}</p>
+      <a className='mt-2 text-[#007bff] font-bold hover:text-[#0056b3] pb-2' href={link} target="_blank" rel="noopener noreferrer">
         View Profile
       </a>
     </div>
   );
 };
 
-const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <h1>Integrated River and Ocean Modeling System (IROMS)</h1>
-    </nav>
-  );
-};
 
 
 const Developers = () => {
   return (
     <div>
-      <Navbar />
-      <header className="header">
-        <h1>Welcome to Our Developer Showcase</h1>
-        <p>Explore the profiles and projects of our talented developers.</p>
+      <header className="header p-[20px] place-items-center">
+        <h1 className='text-[28px] text-[#333]'>Welcome to Our Developer Showcase</h1>
+        <p className='text-[16px] text-[#666]'>Explore the profiles and projects of our talented developers.</p>
       </header>
-      <main className="container">
-        <div className="grid">
+
+
+      <main className="container w-[95%] max-w-[1200px] m-auto p-[20px] pb-[50px]">
+        <div className="flex justify-between pb-10">
           {developers.map((dev, index) => (
             <DeveloperCard
               key={index}
@@ -86,8 +80,8 @@ const Developers = () => {
             />
           ))}
         </div>
-        <h2 className="section-title">Our Collaborators</h2>
-        <div className="grid">
+        <div className='place-items-center'><h2 className="section-title text-[24px] mb-[40px]" >Our Collaborators</h2></div>
+        <div className="flex justify-between">
           {collaborators.map((collab, index) => (
             <DeveloperCard
               key={index}
