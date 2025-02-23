@@ -9,4 +9,5 @@ export default defineConfig({
     tailwindcss(),
     react()
   ],
+  base: '/IROMS-Website/', // Add your repository name here
 })
