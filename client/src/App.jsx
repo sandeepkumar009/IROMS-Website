@@ -6,6 +6,9 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Developers from './pages/Developers'
+import UFS from './pages/UFS';
+import SSS from './pages/SSS';
+import CFS from './pages/CFS';
 
 function App() {
 
@@ -19,6 +22,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/developers" element={<Developers />} />
+          <Route path="/UrbanFloodingSimulation" element={<UFS />} />
+          <Route path="/StormSurgSimulation" element={<SSS />} />
+          <Route path="/CompoundFlowSimulation" element={<CFS />} />
         </Routes>
         <Footer visitor={totalVisitors} hits={totalHits} />
       </Router>
